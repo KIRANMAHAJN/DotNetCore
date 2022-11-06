@@ -9,18 +9,18 @@ namespace DotNetCore.Controllers
     [ApiController]
     public class EmployeeDataController : ControllerBase
     {
-        private readonly IData data;
+        private readonly IData _data;
 
         public EmployeeDataController(IData data)
         {
 
-            this.data = data;
+           _data = data;
         }
 
         [HttpGet]
          public async Task<IActionResult> GetDataList()
         {
-            var result = await _Data.GetDataList();
+            var result = await _data.GetDataList();
             return Ok(result);
 
         }
